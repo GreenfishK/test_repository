@@ -20,11 +20,12 @@ Do not install any packages like pandas or numpy. These dependencies should be r
 # Build your package
 ## Things to do before bulindg
 Before building make sure that either the script section in the build section is empty or that there is a build.sh file
+Make sure that you have a setup.py in your project folder!!!
+Make following entry in meta.yaml:
+    git_url: https://github.com/GreenfishK/test_repository.git
+Only meta.yaml and buil.sh are needed for building. Can also be just those two files in an otherwise empty folder and the source can be sourced from github
+Build:
     command: conda-build . --croot ../conda-build
-If you source from a local directory or archive zip the project director with:
-    command: tar -czvf my_test_pkg.tar.gz2 my_test_pkg
-Make following entry in meta.yaml
-
 
 
 
