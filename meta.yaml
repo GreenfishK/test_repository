@@ -1,0 +1,31 @@
+{% set version = "0.5.0" %}
+
+package:
+  name: my_test_pkg
+  version: {{ version }}
+
+build:
+  # script: conda install --use-local my_test_pkg 
+  noarch: python
+  number: 0
+
+source:
+  # path should later be exchanged with git_url or url:<url_to_conda-forge>
+  path: file:///home/filip/Dokumente/Programming/build_python_package/my_test_pkg.tar.gz2
+
+requirements:
+  host: 
+    - python >=3.8
+    - conda >=4.10
+    - conda-build
+    - anaconda-client
+  run:
+    - python >=3.8
+    - matplotlib >=3.3.2
+    - numpy >=1.18 
+    - pandas >=1.1.2 
+
+about:
+  license: GNU General Public License (GPL)
+  summary: 'A package for testing the conda build mechanisms'
+

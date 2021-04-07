@@ -1,0 +1,56 @@
+# Setup a new conda virtual environment.
+Do not install any packages like pandas or numpy. These dependencies should be recognized by conda during installation of your test package filip_test_package.
+    command: conda create -n test_env python=3.8
+
+# Activate environment
+    command: conda activate test_env
+
+# Install conda-build and anaconda-client
+#   command: conda install anaconda-client conda-build
+
+# Add configs to conda
+# Do this only if it has not been done already
+#   command: conda config --add channels conda-forge
+#   command: conda config --set pip_interop_enabled True
+
+
+
+
+
+# Build your package
+## Things to do before bulindg
+Before building make sure that either the script section in the build section is empty or that there is a build.sh file
+    command: conda-build . --croot ../conda-build
+If you source from a local directory or archive zip the project director with:
+    command: tar -czvf my_test_pkg.tar.gz2 my_test_pkg
+Make following entry in meta.yaml
+
+
+
+
+# Install
+Trouble shooting:
+#1 If you try to install a package that does not exist it will not work. 
+#2 After the package has been built and the command "conda install filip_test_package" has been executed from an arbitrary location it will not work.
+#3 If you are in the conda-build/noarch directory and execute "conda install filip_test_package" it will not find any such package.
+    command: cd <directory where the package was built>/noarch
+
+## Things to check
+Mandatory files in info directory: 
+* files
+* paths.json
+* index.json
+
+Check whether your info/files file is not empty. All the paths must be provided there where the package files should be linked
+Check whether your info/paths.json file is not empty
+More info: https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/pkg-specs.html
+
+Inside filip_test_package-0.5.0-py_0.tar.bz2 there should be the same directory structure as it should be distributed to $CONDA_PREFIX (location where conda is installed)
+    command: conda install --use-local filip_test_package-0.5.0-py_0.tar.bz2
+
+
+
+
+
+
+
