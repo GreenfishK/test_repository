@@ -5,7 +5,6 @@ package:
   version: {{ version }}
 
 build:
-  # script: conda install --use-local my_test_pkg 
   noarch: python
   number: 0
 
