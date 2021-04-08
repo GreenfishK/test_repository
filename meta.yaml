@@ -1,6 +1,6 @@
 
 package:
-  name: my_test_pkg # must be explicitly written
+  name: "my_test_pkg" # must be explicitly written
   version: "0.7.0"
 
 source:
@@ -8,7 +8,7 @@ source:
   git_rev: master
 
 build:
-  noarch: python
+  linux-64: python
   number: 0
 
 requirements:
