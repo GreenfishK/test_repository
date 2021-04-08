@@ -18,9 +18,16 @@ build:
 
 requirements:
   build:
-    {% for dep in data['build'] %}
-    - {{ dep.lower() }}
-    {% endfor %}
+    #{% for dep in data['build'] %}
+    #- {{ dep.lower() }}
+    #{% endfor %}
+    - python
+    - conda
+    - conda-build
+    - setuptools
+    #- anaconda-client
+    #- twine
+    #- wheel
   run:
     {% for req in data['install_requires'] %}
     - {{ req.lower() }}
