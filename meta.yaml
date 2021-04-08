@@ -20,7 +20,8 @@ requirements:
     - conda >=4.10
     - conda-build
     - anaconda-client
-    - setuptools
+    - setuptools  >=40.9.0
+    - wheel
   run:
     - python >=3.8
     - matplotlib >=3.3.2

@@ -1,11 +1,4 @@
-from setuptools import setup
+from setuptools import read_configuration, setup
 
-setup(
-   name='my_test_pkg',
-   version='1.0',
-   description='A useful module',
-   author='Filip Kovacvic',
-   author_email='f.kovacevic@gmx.at',
-   packages=['my_test_pkg'],  #same as name
-   # install_requires=['wheel', 'bar', 'greek'], #external packages as dependencies
-)
+conf_dict = read_configuration("setup.cfg")
+setup() 
