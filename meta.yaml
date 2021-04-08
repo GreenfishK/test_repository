@@ -12,9 +12,12 @@ build:
   number: 0
 
 requirements:
-  host:
+  build:
     - python >=3.8
     - setuptools
+    - conda
+    - conda-build
+    - conda-client
   run:
     - python >=3.8
     - matplotlib >=3.3.2
