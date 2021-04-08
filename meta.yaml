@@ -17,7 +17,7 @@ requirements:
     - setuptools
     - conda
     - conda-build
-    - conda-client
+    - anaconda-client
   run:
     - python >=3.8
     - matplotlib >=3.3.2
