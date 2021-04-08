@@ -1,33 +1,37 @@
-{% set version = "0.5.0" %}
+{% set data = load_setup_py_data() %}
 
 package:
-  name: my_test_pkg
-  version: {{ version }}
+  name: "{{ data['name'] }}"
+  version: "{{ data['version'] }}"
+
+source:
+  git_url: "{{ data['url'] }}.git"
+  git_rev: master
 
 build:
+  # entry_points:
+  #   {% for script in data['entry_points']['console_scripts'] %}
+  #   - {{ script }}
+  #   {% endfor %}
   noarch: python
   number: 0
 
-source:
-  # path should later be exchanged with git_url or url:<url_to_conda-forge>
-  git_url: https://github.com/GreenfishK/test_repository.git
-  git_rev: master # if master is set then this will change over time and is not reproducible
-
 requirements:
-  host: 
-    - python >=3.8
-    - conda >=4.10
-    - conda-build
-    - anaconda-client
-    - setuptools  >=40.9.0
-    - wheel
+  build:
+    {% for dep in data['build'] %}
+    - {{ dep.lower() }}
+    {% endfor %}
   run:
-    - python >=3.8
-    - matplotlib >=3.3.2
-    - numpy >=1.18 
-    - pandas >=1.1.2 
+    {% for req in data['install_requires'] %}
+    - {{ req.lower() }}
+    {% endfor %}
+
 
 about:
-  license: GNU General Public License (GPL)
-  summary: 'A package for testing the conda build mechanisms'
+  summary: "{{ data['description'] }}"
+  description: "{{ data['description'] }}"
+  home: "{{ data['url'] }}"
+  license: "{{ data['license'] }}"
 
+extra:
+  recipe-maintainers: "{{ data['author'] }} <{{ data['author_email'] }}>"
