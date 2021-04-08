@@ -24,7 +24,7 @@ setup(
         'pandas >=1.1.2' 
     ],
     # extras_require={ 'interactive': ['matplotlib>=2.2.0,, 'jupyter'],
-    build=['python', 'conda', 'conda-build', 'anaconda-client', 'setuptools', 'twine', 'wheel']
+    build=['python', 'conda', 'conda-build', 'anaconda-client']  # 'twine', 'wheel'
 
     # Entry points
     # entry_points={'console_scripts': ['my-command=exampleproject.example:main']}
