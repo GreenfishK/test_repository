@@ -8,7 +8,7 @@ source:
   git_rev: master
 
 build:
-  noarch: python 3.8
+  noarch: python
   number: 0
 
 requirements:
