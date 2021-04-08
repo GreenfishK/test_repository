@@ -1,5 +1,5 @@
-from setuptools import config, setup
+from setuptools import setup
 
 setup()
-conf_dict = config.read_configuration("setup.cfg")
+# conf_dict = config.read_configuration("setup.cfg")
 
