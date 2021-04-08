@@ -1,3 +1,4 @@
 from setuptools import setup
 
-setup(name='my_test_pkg')
+if __name__ == "__main__":
+    setup()
