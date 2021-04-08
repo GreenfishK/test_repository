@@ -13,13 +13,13 @@ build:
 
 requirements:
   build:
-    - python 3.8
+    - python =3.8
     - setuptools
     - conda
     - conda-build
     - anaconda-client
   run:
-    - python 3.8
+    - python =3.8
     - matplotlib >=3.3.2
     - numpy >=1.18 
     - pandas >=1.1.2 
