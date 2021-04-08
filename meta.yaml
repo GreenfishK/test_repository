@@ -22,8 +22,6 @@ requirements:
     #- {{ dep.lower() }}
     #{% endfor %}
     - python
-    - conda
-    - conda-build
     - setuptools
     #- anaconda-client
     #- twine
